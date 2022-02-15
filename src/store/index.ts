@@ -153,4 +153,20 @@ export default new Vuex.Store({
   mutations: {},
   actions: {},
   modules: {},
+  getters: {
+    getTeamList( state ){
+      return state.teams;
+    },
+    getTeamListById( state ){
+      return (id: number) => {
+        const newArray = [];
+        for (const team of state.teams){
+          if( team.id === id){
+            newArray.push(team);
+          }
+        }
+        return newArray[0];
+      }
+    }
+  }
 });
