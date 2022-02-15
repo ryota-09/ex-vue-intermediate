@@ -154,9 +154,19 @@ export default new Vuex.Store({
   actions: {},
   modules: {},
   getters: {
+    /**
+     * stateの野球チームの全データを取得するgetter.
+     * @param state -ステイト
+     * @returns 野球チームの配列データ
+     */
     getTeamList( state ){
       return state.teams;
     },
+    /**
+     * idによって絞り込まれたチームのデータを取得するgetter.
+     * @param state -ステイト
+     * @returns 絞り込まれたチームのデータ
+     */
     getTeamListById( state ){
       return (id: number) => {
         const newArray = [];
