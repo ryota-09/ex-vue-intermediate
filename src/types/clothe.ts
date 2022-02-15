@@ -1,66 +1,77 @@
 export class Clothe {
-  constructor(private _id: number,
+  constructor(
+    private _id: number,
     private _category: string,
     private _genre: string,
     private _gender: number,
     private _color: string,
     private _price: number,
-    private _size: string){}
+    private _size: string
+  ) {}
 
-    public get id(): number {
-        return this._id;
+  public get formatGender(): string {
+    let str = "";
+    if (this._gender === 0) {
+      str = "男";
+    } else if (this._gender === 1) {
+      str = "女";
     }
+    return str;
+  }
 
-    public set id(id: number) {
-        this._id = id;
-    }
+  public get id(): number {
+    return this._id;
+  }
 
-    public get category(): string {
-        return this._category;
-    }
+  public set id(id: number) {
+    this._id = id;
+  }
 
-    public set category(category: string) {
-        this._category = category;
-    }
+  public get category(): string {
+    return this._category;
+  }
 
-    public get genre(): string {
-        return this._genre;
-    }
+  public set category(category: string) {
+    this._category = category;
+  }
 
-    public set genre(genre: string) {
-        this._genre = genre;
-    }
+  public get genre(): string {
+    return this._genre;
+  }
 
-    public get gender(): number {
-        return this._gender;
-    }
+  public set genre(genre: string) {
+    this._genre = genre;
+  }
 
-    public set gender(gender: number) {
-        this._gender = gender;
-    }
+  public get gender(): number {
+    return this._gender;
+  }
 
-    public get color(): string {
-        return this._color;
-    }
+  public set gender(gender: number) {
+    this._gender = gender;
+  }
 
-    public set color(color: string) {
-        this._color = color;
-    }
+  public get color(): string {
+    return this._color;
+  }
 
-    public get price(): number {
-        return this._price;
-    }
+  public set color(color: string) {
+    this._color = color;
+  }
 
-    public set price(price: number) {
-        this._price = price;
-    }
+  public get price(): number {
+    return this._price;
+  }
 
-    public get size(): string {
-        return this._size;
-    }
+  public set price(price: number) {
+    this._price = price;
+  }
 
-    public set size(size: string) {
-        this._size = size;
-    }
+  public get size(): string {
+    return this._size;
+  }
 
+  public set size(size: string) {
+    this._size = size;
+  }
 }

@@ -177,6 +177,34 @@ export default new Vuex.Store({
         }
         return newArray[0];
       }
+    },
+    getHotelList(state): Array<Hotel>{
+      return state.hotels;
+    },
+    getHotelListByPrice(state){
+      return ( price: number) => {
+        const newArray = [];
+        for(const hotel of state.hotels){
+          if( hotel.price <= price){
+            newArray.push(hotel);
+          }
+        }
+        return newArray
+      }
+    },
+    getClotheList(state){
+      return state.clothes;
+    },
+    getSerchClothList(state){
+      return (gender: number, color: string) => {
+        const newArray = [];
+        for(const clothe of state.clothes){
+          if( clothe.gender === gender && clothe.color === color){
+            newArray.push(clothe);
+          }
+        }
+        return newArray;
+      }
     }
   }
 });
